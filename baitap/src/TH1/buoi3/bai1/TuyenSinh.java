@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TH1.buoi3;
+package TH1.buoi3.bai1;
 
 import java.awt.HeadlessException;
 import java.io.BufferedWriter;

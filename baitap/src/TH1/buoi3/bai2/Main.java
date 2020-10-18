@@ -3,43 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TH1.buoi3;
+package TH1.buoi3.bai2;
 
 import java.util.Scanner;
 
-/**
- *
- * @author ic3burG
- */
 public class Main {
-    static TuyenSinh TS = new TuyenSinh();
+    
     public static void Menu(){
-        System.out.println("1.Nhap thi sinh");
-        System.out.println("2.Hien thi danh sach thi sinh");
-        System.out.println("3.Tim kiem thi sinh bang SBD");
-        System.out.println("4.Thoat");
-        System.out.println("Lua chon: ");
+        System.out.println("1.Nhap danh sach\n2.Xuat danh sach\3.Ghi danh sach vao file\n4.Doc danh sach tu file\n5.Thoat");
+        System.out.println("Nhap lua chon: ");
     }
     
     public static void main(String[] args) {
+        QuanLy ql = new QuanLy();
         Scanner sc = new Scanner(System.in);
-        int rep = 0;
         String c;
-        while(rep!=4){
+        int rep = 0;
+        while(rep!=5){
             Menu();
             rep = sc.nextInt();
             switch(rep){
                 case 1:
-                    System.out.println("Chon khoi: ");
-                    sc.nextLine();
-                    c = sc.nextLine();
-                    TS.nhap(c);
+                    ql.nhap();
                     break;
                 case 2:
-                    TS.xuat();
+                    ql.xuat();
                     break;
                 case 3:
-                    TS.timkiem();
+                    ql.GhiFile();
+                    break;
+                case 4:
+                    ql.DocFile();
                     break;
             }
         }

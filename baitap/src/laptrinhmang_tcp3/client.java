@@ -25,8 +25,8 @@ public class client {
     }
     
     public static void main(String[] args) throws IOException{
-        Socket client = new Socket("127.0.0.1", 10);
-        while (true) {            
+        Socket client = new Socket("127.0.0.1", 10); 
+        while(true){
             DataInputStream dis = new DataInputStream(client.getInputStream());
             DataOutputStream dos = new DataOutputStream(client.getOutputStream());
             Scanner sc = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class client {
             String temp = sc.nextLine();
             dos.writeUTF(temp);
             
-            while(!temp.equals("3")){
+            
                 switch(temp){   
                     case "1":
                         System.out.println("Write the word: ");
@@ -49,9 +49,10 @@ public class client {
                         input = sc.nextLine();
                         dos.writeUTF(input);
                         dis.readUTF();
+                        System.out.println(dis.readUTF());
                         break;
                 }
             }
         }
     }
-}
+

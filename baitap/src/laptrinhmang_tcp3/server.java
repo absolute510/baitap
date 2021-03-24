@@ -56,6 +56,17 @@ public class server {
                     }
                 }
             }
+            
+            if (temp.equals("2")) {
+                input = dis.readUTF();
+                System.out.println(input);
+                for(int i = 0;i<dictionary.size();i++){
+                    if(dictionary.get(i).getVN().equals(input)){
+                        String output = dictionary.get(i).getEN().toString();
+                        dos.writeUTF(output);
+                    }
+                }
+            }
         }
     }
 }
